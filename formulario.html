@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Permiso</title>
+    <link rel="stylesheet" href="formulario.css">
+    <script src="formulario.js"></script>
+    <script src="jspdf.min.js"></script>
+</head>
+<body>
+    <h2>Formulario de Permiso</h2>
+    <form id="formularioPermiso">
+        <div class="campo">
+            <label for="proyecto">Proyecto o Área:</label>
+            <input type="text" id="proyecto" name="proyecto" required>
+        </div>
+
+        <div class="campo">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+        </div>
+
+        <div class="campo">
+            <label for="fecha_expedicion">Fecha de Expedición:</label>
+            <input type="date" id="fecha_expedicion" name="fecha_expedicion" required>
+        </div>
+
+        <div class="campo">
+            <label for="permiso_hasta">Permiso válido hasta:</label>
+            <input type="date" id="permiso_hasta" name="permiso_hasta" required>
+        </div>
+
+        <div class="campo">
+            <label for="hora_inicio">Hora de Inicio:</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required>
+        </div>
+
+        <div class="campo">
+            <label for="hora_fin">Hora de Finalización:</label>
+            <input type="time" id="hora_fin" name="hora_fin" required>
+        </div>
+
+        <button type="button" onclick="guardarDatos()">Guardar</button>
+    </form>
+</body>
+</html>
