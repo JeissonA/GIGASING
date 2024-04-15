@@ -10,7 +10,7 @@
     font-family: Arial, sans-serif;
 }
 .color-fondo{
-background-color: red;
+background-color: rgba(255, 0, 0, 0.541);
 }
 h2 {
     text-align: center;
@@ -236,11 +236,33 @@ techos:
     <input type="radio" name="Desplazamientos" value="si">Sí
     <input type="radio" name="Desplazamientos" value="si">No
 </Label>
+
+<hr>
+
+<p class="color-fondo"><strong>TRABAJADORES AUTORIZADOS PARA LA EJECUCION DE LA ACTIVIDAD EN ALTURAS</strong></p>
+<Label>
+Nombre Completo:
+<input type="text" name="nombrecompleto" id="nombrecompleto">
+</Label>
+<Label>
+Tipo de documento:
+    <input type="text" name="CC" id="CC">
+</Label>
+<Label>
+N° de documento:
+<input type="text" name="nocc" id="nocc">
+</Label>
+<Label>
+Cargo:
+    <input type="text" name="cargo" id="cargo">
+</Label>
+<label for="firma">Adjuntar Firma Digital</label>
+<input type="file" name="firma" id="firma">
     
         <button type="button" onclick="guardarDatos()">GENERAR PDF</button>
     </form>
     <footer>
-        <p>© Copyrigth Derechos Reservados AndresDEV</p>
+        <p>© Copyrigth Derechos Reservados GIGACON TRANSPORTES S.A.S  (Andres DEV)</p>
     </footer>
     <script>
         function guardarDatos() {
@@ -270,7 +292,11 @@ techos:
     var Posicionamiento = document.querySelector('input[name="Posicionamiento"]:checked').value;
     var Suspension = document.querySelector('input[name="Suspension"]:checked').value;
     var Desplazamientos = document.querySelector('input[name="Desplazamientos"]:checked').value;
-
+    var nombrecompleto = document.getElementById('nombrecompleto').value;
+    var CC = document.getElementById('CC').value;
+    var nocc = document.getElementById('nocc').value;
+    var cargo = document.getElementById('cargo').value;
+    var firma = document.getElementById('firma').value;
     // Crear un nuevo objeto Image
     var img = new Image();
     img.src = '/img/Permisodealturaspg1.jpg'; // Reemplaza 'ruta_de_tu_imagen.jpg' por la ruta de tu propia imagen de fondo
@@ -307,16 +333,21 @@ techos:
             especifica: { x: 547, y: 230 },
             escaleras: { x: 551, y: 234 },
             moviles: { x: 650, y: 234 },
-            canasta: { x: 789, y: 252 },
+            canasta: { x: 788, y: 252 },
             andamioss: { x: 788, y: 271 },
-            estructura: { x: 790, y: 289 },
-            otross: { x: 500, y: 307 },
+            estructura: { x: 788, y: 289 },
+            otross: { x: 495, y: 310 },
             especificar: { x: 530, y: 310 },
             AyD: { x: 1092, y: 237 },
             Restriccion: { x: 1092, y: 253 },
             Posicionamiento: { x: 1092, y: 270 },
             Suspension: { x: 1092, y: 287 },
             Desplazamientos: { x: 1092, y: 307 },
+            nombrecompleto: { x: 196, y: 455 },
+            CC: { x: 548, y: 455 },
+            nocc: { x: 682, y: 455 },
+            cargo: { x: 792, y: 455 },
+            firma: { x: 955, y: 455 },
            
         };
         
@@ -347,6 +378,11 @@ techos:
         ctx.fillText(Posicionamiento, coordenadas.Posicionamiento.x, coordenadas.Posicionamiento.y);
         ctx.fillText(Suspension, coordenadas.Suspension.x, coordenadas.Suspension.y);
         ctx.fillText(Desplazamientos, coordenadas.Desplazamientos.x, coordenadas.Desplazamientos.y);
+        ctx.fillText(nombrecompleto, coordenadas.nombrecompleto.x, coordenadas.nombrecompleto.y);
+        ctx.fillText(CC, coordenadas.CC.x, coordenadas.CC.y);
+        ctx.fillText(nocc, coordenadas.nocc.x, coordenadas.nocc.y);
+        ctx.fillText(cargo, coordenadas.cargo.x, coordenadas.cargo.y);
+        ctx.fillText(firma, coordenadas.firma.x, coordenadas.firma.y);
 
         
 
