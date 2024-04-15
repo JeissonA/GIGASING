@@ -92,6 +92,10 @@ body {
   input[type="text"] {
     margin-left: 10px;
   }
+
+  #canvas{
+    border: 1px solid black;
+  }
   
     </style>
 </head>
@@ -234,7 +238,7 @@ techos:
 <Label>
     Desplazamientos horizontales
     <input type="radio" name="Desplazamientos" value="si">Sí
-    <input type="radio" name="Desplazamientos" value="si">No
+    <input type="radio" name="Desplazamientos" value="no">No
 </Label>
 
 <hr>
@@ -256,17 +260,105 @@ N° de documento:
 Cargo:
     <input type="text" name="cargo" id="cargo">
 </Label>
-<label for="firma">Adjuntar Firma Digital</label>
-<input type="file" name="firma" id="firma">
-    
+<span>FIRMA DIGITAL AQUÍ</span>
+
+<canvas id="canvas" width="400" height="200"></canvas>
+</div>
+<hr>
+<p class="color-fondo"><strong>REQUISITOS PARA LA EJECUCION DE LA ACTIVIDAD</strong></p>
+<Label>
+    Apto para trabajo en alturas, según examen médico y concepto de aptiptud:
+    <input type="radio" name="exmed" value="si">Sí
+    <input type="radio" name="exmed" value="no">No
+</Label>
+<Label>
+    Certificado de competencia laboral vigente (trabajo seguro en alturas)
+    <input type="radio" name="tral" value="si">Sí
+    <input type="radio"name="tral" value="no">No
+</Label>
         <button type="button" onclick="guardarDatos()">GENERAR PDF</button>
     </form>
     <footer>
         <p>© Copyrigth Derechos Reservados GIGACON TRANSPORTES S.A.S  (Andres DEV)</p>
     </footer>
     <script>
-        function guardarDatos() {
+    
+    // Obtener el elemento canvas y su contexto de dibujo
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // Variable para controlar si el usuario está dibujando
+    var dibujando = false;
+
+    // Establecer el color de dibujo
+    ctx.strokeStyle = 'black'; // Color negro
+
+    // Función para obtener las coordenadas del evento
+    function obtenerCoordenadas(event) {
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      return { x: x, y: y };
+    }
+
+    // Evento al presionar el botón del mouse o tocar la pantalla
+    canvas.addEventListener('mousedown', function(event) {
+      dibujando = true;
+      var coordenadas = obtenerCoordenadas(event);
+      ctx.beginPath(); // Comenzar un nuevo trazo
+      ctx.moveTo(coordenadas.x, coordenadas.y);
+    });
+
+    // Evento al mover el mouse o el dedo mientras se mantiene presionado
+    canvas.addEventListener('mousemove', function(event) {
+      if (dibujando) {
+        var coordenadas = obtenerCoordenadas(event);
+        ctx.lineTo(coordenadas.x, coordenadas.y);
+        ctx.stroke();
+      }
+    });
+
+    // Evento al soltar el botón del mouse o levantar el dedo
+    canvas.addEventListener('mouseup', function() {
+      dibujando = false;
+    });
+
+    // Evento al salir del área del canvas
+    canvas.addEventListener('mouseleave', function() {
+      dibujando = false;
+    });
+
+    // Evento al tocar la pantalla
+    canvas.addEventListener('touchstart', function(event) {
+      event.preventDefault(); // Evitar el comportamiento táctil predeterminado
+      dibujando = true;
+      var coordenadas = obtenerCoordenadas(event.touches[0]); // Obtener las coordenadas del primer toque
+      ctx.beginPath(); // Comenzar un nuevo trazo
+      ctx.moveTo(coordenadas.x, coordenadas.y);
+    });
+
+    // Evento al mover el dedo mientras se mantiene tocado
+    canvas.addEventListener('touchmove', function(event) {
+      event.preventDefault(); // Evitar el comportamiento táctil predeterminado
+      if (dibujando) {
+        var coordenadas = obtenerCoordenadas(event.touches[0]); // Obtener las coordenadas del primer toque
+        ctx.lineTo(coordenadas.x, coordenadas.y);
+        ctx.stroke();
+      }
+    });
+
+    // Evento al levantar el dedo de la pantalla
+    canvas.addEventListener('touchend', function(event) {
+      dibujando = false;
+    });
+
+    // Evento al cancelar el evento táctil
+    canvas.addEventListener('touchcancel', function(event) {
+      dibujando = false;
+    });
+
     // Obtener datos del formulario
+    function guardarDatos() {
     var proyecto = document.getElementById('proyecto').value;
     var ciudad = document.getElementById('ciudad').value;
     var fecha_expedicion = document.getElementById('fecha_expedicion').value;
@@ -296,7 +388,8 @@ Cargo:
     var CC = document.getElementById('CC').value;
     var nocc = document.getElementById('nocc').value;
     var cargo = document.getElementById('cargo').value;
-    var firma = document.getElementById('firma').value;
+    var firma = document.querySelectorAll('input[name="firma"]:checked').value;
+    
     // Crear un nuevo objeto Image
     var img = new Image();
     img.src = '/img/Permisodealturaspg1.jpg'; // Reemplaza 'ruta_de_tu_imagen.jpg' por la ruta de tu propia imagen de fondo
@@ -399,6 +492,10 @@ Cargo:
         pdf.save('Permiso_de_alturas.pdf');
     };
 }
+
+
+
+
 
     </script>
 </body>
