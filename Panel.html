@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/icon/logo_gigacon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <title>Panel</title>
+  <style>
+:root{
+  --color-white:#ffffff;
+  --color-light:#f0eff5;
+  --color-gray-ligth:#86848c;
+  --color-gray-dark:#56555e;
+  --color-dark: #27282f;
+  --color-primary: rgb(234, 7, 7);
+  --color-success:rgb(34, 202, 75);
+  --color-danger: rgb(255, 67, 54);
+  --color-warning:rgb(234, 181, 7);
+  --color-purple:rgb(160, 99, 245);
+
+  --color-primary-ligth:rgb(71, 7, 234, 0.2);
+  --color-success-ligth:rgb(34, 202, 75, 0.2);
+  --color-danger-ligth:rgb(255, 67, 54, 0.2);
+  --color-purple-ligth:rgb(160, 99, 245, 0.2);
+
+  --card-padding: 1.6rem;
+  --padding-1: 1rem;
+  --padding-2: 8px;
+
+  --card-border-radius: 1.6rem;
+  --border-radius-1: 1rem;
+  --border-radius-2: 6px;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 12px;
+}
+
+body{
+  background: var(--color-light);
+  font-family: sans-serif;
+  min-height: 100vh;
+  color: var(--color-dark);
+}
+
+img{
+  width: 100%;
+}
+
+h1{
+  font-size: 2.2rem;
+}
+
+h2{
+  font-size: 1.5rem;
+}
+h3{
+  font-size: 1.2rem;
+}
+h4{
+  font-size: 1rem;
+}
+h5{
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+h6{
+  font-size: 7.6rem;
+}
+p{
+  font-size: 0.86rem;
+  color: var(--color-gray-dark);
+}
+small{
+  font-weight: 300;
+  font-size: 0.77rem;
+}
+
+.text-muted{
+  color: var(--color-gray-ligth);
+
+}
+.primary{
+  color: var(--color-primary);
+}
+
+.danger{
+  color: var(--color-danger);
+}
+
+.success{
+  color: var(--color-success);
+}
+
+.purple{
+  color: var(--color-purple);
+}
+.bg-primary{
+  background: var(--color-primary);
+  box-shadow: 0 0.8rem 0.8 rem var(--color-primary-ligth);
+}
+
+.bg-danger{
+  background: var(--color-danger);
+  box-shadow: 0 0.8rem 0.8 rem var(--color-danger-ligth);
+}
+
+.bg-success{
+  background: var(--color-success);
+  box-shadow: 0 0.8rem 0.8 rem var(--color-success-ligth);
+}
+
+.bg-purple{
+  background: var(--color-purple);
+  box-shadow: 0 0.8rem 0.8 rem var(--color-purple-ligth);
+}
+.bg-dark{
+  background: #27282f;
+  box-shadow: 0 0.8rem 0.8 rem rgba(0, 0, 0, 0.2);
+}
+/*===========NAV BAR==================*/
+
+nav{
+  width: 100%;
+  background:var(--color-white);
+  padding: 1rem 0;
+
+}
+
+nav .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+}
+
+nav img.logo{
+  width: 7rem;
+}
+
+nav .search-bar{
+  background: var(color --color-light);
+  padding: var(--padding-2) var(card --card-padding);
+  width: 32vw;
+  border-radius: var(--border-radius-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(color --color-gray-ligth);
+  position: absolute;
+  left: 15%;
+}
+nav .search-bar input[type='search']{
+color: var(--color-dark);
+background: transparent;
+width: 100%;
+}
+nav .search-bar input[type='search']::placeholder{
+color: var(--color-gray-dark);
+}
+
+nav .profile-area{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+nav .profile-area .theme-btn{
+  display: flex;
+  background: var(--color-light);
+  width: 5rem;
+  height: 2rem;
+  border-radius: var(--border-radius-2);
+  cursor: pointer;
+}
+nav .profile-area .theme-btn span{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+nav .profile-area .theme-btn .active{
+  background: var(--color-dark);
+  border-radius: var(--border-radius-2);
+  color: var(--color-white);
+}
+
+nav .profile-area .profile{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav .profile-area .profile-photo{
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+nav .profile-area button{
+  display: none;
+}
+
+/* ===========ASIDE & SIDEBAR===========*/
+
+main{
+  display: grid;
+  grid-template-columns: 16rem auto 30rem;
+  gap: 2rem;
+  width: 96%;
+  margin: 1rem auto 4rem;
+}
+main aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 88vh;
+}
+main aside buttonclose-btn {
+  display: none;
+}
+
+main aside .sidebar a{
+display: flex;
+align-items: center;
+gap: 1.2rem;
+height: 4.2rem;
+color: var(--color-gray-ligth);
+position: relative;
+}
+main aside .sidebar a span{
+  font-size: 1.7rem;
+  margin-left: 3rem;
+  transition: all 300ms ease;
+}
+
+main aside .sidebar a.active{
+background: var(color --color-white);
+color: var(--color-primary);
+}
+
+main aside .sidebar a.active::before{
+  content: "";
+  width: 6px;
+  height: 100%;
+  position: absolute;
+  background: var(--color-primary);
+}
+
+main aside .sidebar a :hover {
+   color: var(--color-primary);
+}
+
+
+main aside .sidebar a:hover span{
+  margin-left: 2rem ;
+}
+
+main aside .sidebar h4{
+  font-weight: 500;
+}
+
+main aside .updates{
+  background: var(color --color-white);
+  border-radius: var(--border-radius-1);
+  text-align: center;
+  padding: var(--card-padding);
+}
+
+main aside .updates span{
+  font-size: 2.8rem;
+}
+
+main aside .updates h4{
+margin: 1rem;
+}
+
+main aside .updates a {
+  display: block;
+  width: 100%;
+  background: var(--color-primary);
+  color: var(color --color-white);
+  border-radius: var(--border-radius-1);
+  padding: 0.8 rem 0;
+  margin-top: 2rem;
+transition: all 300ms ease;
+}
+main aside .updates a:hover{
+  box-shadow: 0 1rem 2rem var(--color-primary-ligth);
+}
+
+/*TARJETAS DE ACTIVOS*/
+main section.middle .header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+main section.middle .header input[type="date"]{
+padding: 0.5rem 2rem;
+border-radius: var(--border-radius-2);
+background: var(color --color-white);
+color: var(--color-gray-dark);
+}
+
+main section.middle .cards{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+main section.middle .cards .card{
+  background: linear-gradient(#ff796f, #bd261b);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  color: white;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2rem 3rem var(--color-danger-ligth);
+  transition: all 300ms ease;
+
+}
+
+main section.middle .cards .card:hover{
+  box-shadow: none;
+}
+
+main section.middle .cards .card:nth-child(2){
+  background: linear-gradient(#7f8191, #27282f);
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+main section.middle .cards .card:nth-child(3){
+  background: linear-gradient(#5d70ff, #5719c2);
+  box-shadow: 0 2rem 3rem var(--color-primary-ligth);;
+}
+
+main section.middle .cards .card:hover {
+  box-shadow: none;
+}
+main section.middle .cards .card .top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+main section.middle .card .top .letf{
+  display: flex;
+  gap: 0.5rem;
+}
+main section.middle .card .top .letf h2{
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+main section.middle .card .top .letf img{
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid white;
+  border-radius: var(--border-radius-2);
+  padding: 0.4rem;
+}
+
+main section.middle .card .top img.right{
+width: 3.5rem;
+}
+
+main section.middle .card .middle{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+main section.middle .card .middle .chip{
+  width: 3.5rem;
+  
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+<img src="/icon/logo_gigacon.png" class="logo">
+<div class="search-bar">
+<span class="material-symbols-outlined">search</span>
+<input type="search" placeholder="Buscar">
+    </div>
+    <div class="profile-area">
+      <div class="theme-btn">
+        <span class="material-symbols-outlined">
+          light_mode
+          </span>
+          <span class="material-symbols-outlined">
+            dark_mode
+            </span>
+      </div>
+      <div class="profile">
+        <div class="profile-photo">
+          <img src="/icon/perfil.jpg">
+        </div>
+        <h5>Jeisson Bermudez</h5>
+        <span class="material-symbols-outlined">
+          expand_more
+          </span>
+      </div>
+      <button id="menu-btn">
+        <span class="material-symbols-outlined">
+          menu
+          </span>
+      </button>
+    </div>
+  </div>
+</nav>
+     <!--fin del navegador--> 
+     <!--inicio aside-->
+     <main>
+      <aside>
+<buttom id="close-btn">
+  <span class="material-symbols-outlined">
+    close
+    </span>
+</buttom>
+
+<div class="sidebar">
+  <a href="#">
+    <span class="material-symbols-outlined">
+      dashboard
+      </span>
+      <h4>Panel</h4>
+  </a>
+  <div class="sidebar">
+    <a href="/firma.html" class="active">
+      <span class="material-symbols-outlined">
+        Signature
+        </span>
+        <h4>Firmar</h4>
+    </a>
+      <a href="#">
+        <span class="material-symbols-outlined">
+          History
+          </span>
+          <h4>Historial</h4>
+      </a>
+        <a href="#">
+          <span class="material-symbols-outlined">
+            library_books
+            </span>
+            <h4>Biblioteca</h4>
+
+            </a>
+            <a href="#">
+              <span class="material-symbols-outlined">
+                account_circle
+                </span>
+                <h4>Perfil</h4>
+            </a>
+            
+            <a href="#">
+            <span class="material-symbols-outlined">
+              logout
+              </span>
+              <h4>Cerrar Sesión</h4>
+            </a>
+</div>
+<div class="updates">
+  <span class="material-symbols-outlined">
+    update
+    </span>
+    <h4>Refrescar pagina</h4>
+    <small>Security updates</small>
+    <small>General updates</small>
+    <a href="#">Update Now</a>
+</div>
+      </aside>
+      <!--fin aside-->
+      <section class="middle">
+<div class="header">
+  <h1>Overview</h1>
+  <input type="date">
+</div>
+
+    </div>
+  
+   </div>
+</div>
+ 
+
+</div>
+
+      </section>
+ 
+
+   
+     <!--==============fin aside=============-->
+    </main>
+  <script>
+
+  </script>
+</body>
+</html>
