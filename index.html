@@ -76,11 +76,11 @@
             </div>
     
             <div class="usuario">
-                <img src="/icon/perfil.jpg" alt="">
+                <img src="/icon/SST.png" alt="">
                 <div class="info-usuario">
                     <div class="nombre-email">
-                        <span class="nombre">Jeisson Bermudez</span>
-                        <span class="email">andresbermudez@gigacon.com.co</span>
+                        <span class="nombre">Usuario SST</span>
+                        <span class="email">info@gigacon.com.co</span>
                     </div>
                     <ion-icon name="ellipsis-vertical-outline"></ion-icon>
                     
@@ -129,38 +129,55 @@
             <div class="section" id="section-3">          
                 <h2>FORMULARIO PERMISO PARA TRABAJO EN ALTURA</h2>
                 
-                <form id="formularioPermiso">
-                    <div class="campo">
-                        <label for="proyecto">Proyecto o Área:</label>
-                        <input type="text" id="proyecto" name="proyecto" required>
+                <form id="multi-step-form">
+                    <div class="form-section" id="section-1">
+                        <h2>Sección 1</h2>
+            <div class="campo">
+            <label for="proyecto">Proyecto o Área:</label>
+            <input type="text" id="proyecto" name="proyecto" required>
+        </div>
+
+        <div class="campo">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+        </div>
+
+        <div class="campo">
+            <label for="fecha_expedicion">Fecha de Expedición:</label>
+            <input type="date" id="fecha_expedicion" name="fecha_expedicion" required>
+        </div>
+
+        <div class="campo">
+            <label for="permiso_hasta">Permiso válido hasta:</label>
+            <input type="date" id="permiso_hasta" name="permiso_hasta" required>
+        </div>
+
+        <div class="campo">
+            <label for="hora_inicio">Hora de Inicio:</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required>
+        </div>
+
+        <div class="campo">
+            <label for="hora_fin">Hora de Finalización:</label>
+            <input type="time" id="hora_fin" name="hora_fin" required>
+
+            <button type="button" class="next-btn">Siguiente</button>
+        </div>
                     </div>
-            
-                    <div class="campo">
-                        <label for="ciudad">Ciudad:</label>
-                        <input type="text" id="ciudad" name="ciudad" required>
+                    <div class="form-section" id="section-2">
+                        <h2>Sección 2</h2>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <button type="button" class="prev-btn">Anterior</button>
+                        <button type="button" class="next-btn">Siguiente</button>
                     </div>
-            
-                    <div class="campo">
-                        <label for="fecha_expedicion">Fecha de Expedición:</label>
-                        <input type="date" id="fecha_expedicion" name="fecha_expedicion" required>
+                    <div class="form-section" id="section-3">
+                        <h2>Sección 3</h2>
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message"></textarea>
+                        <button type="button" class="prev-btn">Anterior</button>
+                        <button type="button" onclick="guardarDatos()">GENERAR PDF</button>
                     </div>
-            
-                    <div class="campo">
-                        <label for="permiso_hasta">Permiso válido hasta:</label>
-                        <input type="date" id="permiso_hasta" name="permiso_hasta" required>
-                    </div>
-            
-                    <div class="campo">
-                        <label for="hora_inicio">Hora de Inicio:</label>
-                        <input type="time" id="hora_inicio" name="hora_inicio" required>
-                    </div>
-            
-                    <div class="campo">
-                        <label for="hora_fin">Hora de Finalización:</label>
-                        <input type="time" id="hora_fin" name="hora_fin" required>
-                    </div>
-            
-                    <button type="button" onclick="guardarDatos()">Guardar</button>
                 </form>
       </div>
       </div>

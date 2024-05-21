@@ -67,6 +67,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//sections forms//
+
+document.addEventListener("DOMContentLoaded", function() {
+  const formSections = document.querySelectorAll(".form-section");
+  const nextButtons = document.querySelectorAll(".next-btn");
+  const prevButtons = document.querySelectorAll(".prev-btn");
+
+  let currentSection = 0;
+
+  formSections[currentSection].classList.add("active");
+
+  nextButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+          formSections[currentSection].classList.remove("active");
+          currentSection = Math.min(currentSection + 1, formSections.length - 1);
+          formSections[currentSection].classList.add("active");
+      });
+  });
+
+  prevButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+          formSections[currentSection].classList.remove("active");
+          currentSection = Math.max(currentSection - 1, 0);
+          formSections[currentSection].classList.add("active");
+      });
+  });
+
+  document.getElementById("multi-step-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Formulario enviado!");
+  });
+});
+
 //ANUNCIOS//
 document.addEventListener('DOMContentLoaded', function () {
     // Mostrar el anuncio después de 10 segundos
