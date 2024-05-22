@@ -195,6 +195,22 @@ function guardarDatos() {
  var mosqueton = document.querySelector('input[name="mosqueton"]:checked').value;
  var otros = document.querySelector('input[name="otros"]:checked').value;
  var porque = document.getElementById('porque').value;
+ var ccb = document.querySelector('input[name="ccb"]:checked').value;
+ var gds = document.querySelector('input[name="gds"]:checked').value;
+ var pa = document.querySelector('input[name="pa"]:checked').value;
+ var mask = document.querySelector('input[name="mask"]:checked').value;
+ var guantes = document.querySelector('input[name="guantes"]:checked').value;
+ var rdt = document.querySelector('input[name="rdt"]:checked').value;
+ var zcps = document.querySelector('input[name="zcps"]:checked').value;
+ var gdp = document.querySelector('input[name="gdp"]:checked').value;
+ var otherss = document.querySelector('input[name="otherss"]:checked').value;
+ var totherss = document.getElementById('totherss').value;
+ var obs = document.getElementById('obs').value;
+ var fecha_exp = document.getElementById('fecha_exp').value;
+ var valih = document.getElementById('valih').value;
+ var Hri = document.getElementById('Hri').value;
+ var hrf = document.getElementById('hrf').value;
+ 
  
 
 
@@ -264,6 +280,22 @@ function guardarDatos() {
          mosqueton: { x: 445, y: 1083 },
          otros: { x: 176, y: 1104 },
          porque: { x: 237, y: 1104},
+         ccb: { x: 914  , y:  954  },
+         gds: { x: 914  , y:  971  },
+         pa: { x: 914  , y:  994  },
+         mask: { x: 914  , y:  1012  },
+         guantes: { x: 914  , y:  1028  },
+         rdt: { x: 914  , y:  1046  },
+         zcps: { x: 914  , y:  1062  },
+         gdp: { x: 914  , y:  1082  },
+         otherss: { x: 690  , y:  1104  },
+         totherss: { x: 725  , y: 1104 },
+         obs: { x: 120  , y:  1142  },
+         fecha_exp: { x: 346  , y:  1190  },
+         valih: { x: 294  , y:  1210  },
+         Hri: { x: 760  , y:  1190  },
+         hrf: { x: 792  , y: 1209 },
+
          
       };
 
@@ -313,7 +345,22 @@ function guardarDatos() {
      ctx.fillText(mosqueton, coordenadas.mosqueton.x, coordenadas.mosqueton.y);
      ctx.fillText(otros, coordenadas.otros.x, coordenadas.otros.y);
      ctx.fillText(porque, coordenadas.porque.x, coordenadas.porque.y);
-    
+     ctx.fillText(ccb, coordenadas.ccb.x, coordenadas.ccb.y);
+     ctx.fillText(gds, coordenadas.gds.x, coordenadas.gds.y);
+     ctx.fillText(pa, coordenadas.pa.x, coordenadas.pa.y);
+     ctx.fillText(mask, coordenadas.mask.x, coordenadas.mask.y);
+     ctx.fillText(guantes, coordenadas.guantes.x, coordenadas.guantes.y);
+     ctx.fillText(rdt, coordenadas.rdt.x, coordenadas.rdt.y);
+     ctx.fillText(zcps, coordenadas.zcps.x, coordenadas.zcps.y);
+     ctx.fillText(gdp, coordenadas.gdp.x, coordenadas.gdp.y);
+     ctx.fillText(otherss, coordenadas.otherss.x, coordenadas.otherss.y);
+     ctx.fillText(totherss, coordenadas.totherss.x, coordenadas.totherss.y);
+     ctx.fillText(obs, coordenadas.obs.x, coordenadas.obs.y);
+     ctx.fillText(fecha_exp, coordenadas.fecha_exp.x, coordenadas.fecha_exp.y);
+     ctx.fillText(valih, coordenadas.valih.x, coordenadas.valih.y);
+     ctx.fillText(Hri, coordenadas.Hri.x, coordenadas.Hri.y);
+     ctx.fillText(hrf, coordenadas.hrf.x, coordenadas.hrf.y);
+     
      
     
 
