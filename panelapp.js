@@ -179,6 +179,12 @@ function guardarDatos() {
  var CC = document.getElementById('CC').value;
  var nocc = document.getElementById('nocc').value;
  var cargo = document.getElementById('cargo').value;
+ var exmed = document.querySelector('input[name="exmed"]:checked').value;
+ var tral = document.querySelector('input[name="tral"]:checked').value;
+ var afisv= document.querySelector('input[name="afisv"]:checked').value;
+ var sintomas = document.querySelector('input[name="sintomas"]:checked').value;
+ var ptosanclaje = document.getElementById('ptosanclaje').value;
+ var dpc = document.getElementById('dpc').value;
 
   // Crear un nuevo objeto Image
   var img = new Image();
@@ -230,6 +236,13 @@ function guardarDatos() {
           CC: { x: 548, y: 455 },
           nocc: { x: 682, y: 455 },
           cargo: { x: 792, y: 455 },
+          exmed: { x: 917, y: 631 },
+         tral: { x: 917, y: 656 }, 
+         afisv: { x: 917, y: 680 },
+         sintomas: { x: 917, y: 706 },
+         ptosanclaje: { x: 191, y: 757 },
+         dpc: { x: 679, y: 757 },
+         
       };
 
       // Superponer los datos del formulario en las coordenadas especificadas
@@ -262,6 +275,14 @@ function guardarDatos() {
      ctx.fillText(CC, coordenadas.CC.x, coordenadas.CC.y);
      ctx.fillText(nocc, coordenadas.nocc.x, coordenadas.nocc.y);
      ctx.fillText(cargo, coordenadas.cargo.x, coordenadas.cargo.y);
+     ctx.fillText(exmed, coordenadas.exmed.x, coordenadas.exmed.y);
+     ctx.fillText(tral, coordenadas.tral.x, coordenadas.tral.y);
+     ctx.fillText(afisv, coordenadas.afisv.x, coordenadas.afisv.y);
+     ctx.fillText(sintomas, coordenadas.sintomas.x, coordenadas.sintomas.y);
+     ctx.fillText(ptosanclaje, coordenadas.ptosanclaje.x, coordenadas.ptosanclaje.y);
+     ctx.fillText(dpc, coordenadas.dpc.x, coordenadas.dpc.y);
+     
+    
 
       // Convertir el canvas a imagen JPEG
       var imagenDataUrl = canvas.toDataURL('image/jpeg');
