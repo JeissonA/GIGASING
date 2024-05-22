@@ -185,6 +185,18 @@ function guardarDatos() {
  var sintomas = document.querySelector('input[name="sintomas"]:checked').value;
  var ptosanclaje = document.getElementById('ptosanclaje').value;
  var dpc = document.getElementById('dpc').value;
+ var acc = document.querySelector('input[name="acc"]:checked').value;
+ var eae = document.querySelector('input[name="eae"]:checked').value;
+ var esae = document.querySelector('input[name="esae"]:checked').value;
+ var ep = document.querySelector('input[name="ep"]:checked').value;
+ var lv = document.querySelector('input[name="lv"]:checked').value;
+ var lh = document.querySelector('input[name="lh"]:checked').value;
+ var Freno = document.querySelector('input[name="Freno"]:checked').value;
+ var mosqueton = document.querySelector('input[name="mosqueton"]:checked').value;
+ var otros = document.querySelector('input[name="otros"]:checked').value;
+ var porque = document.getElementById('porque').value;
+ 
+
 
   // Crear un nuevo objeto Image
   var img = new Image();
@@ -242,6 +254,16 @@ function guardarDatos() {
          sintomas: { x: 917, y: 706 },
          ptosanclaje: { x: 191, y: 757 },
          dpc: { x: 679, y: 757 },
+         acc: { x: 445, y: 953 },
+         eae: { x: 445, y: 972 },
+         esae: { x: 445, y: 994 },
+         ep: { x: 445, y: 1012 },
+         lv: { x: 445, y: 1029 },
+         lh: { x: 445, y: 1048 },
+         Freno: { x: 445, y: 1066 },
+         mosqueton: { x: 445, y: 1083 },
+         otros: { x: 176, y: 1104 },
+         porque: { x: 237, y: 1104},
          
       };
 
@@ -281,6 +303,17 @@ function guardarDatos() {
      ctx.fillText(sintomas, coordenadas.sintomas.x, coordenadas.sintomas.y);
      ctx.fillText(ptosanclaje, coordenadas.ptosanclaje.x, coordenadas.ptosanclaje.y);
      ctx.fillText(dpc, coordenadas.dpc.x, coordenadas.dpc.y);
+     ctx.fillText(acc, coordenadas.acc.x, coordenadas.acc.y);
+     ctx.fillText(eae, coordenadas.eae.x, coordenadas.eae.y);
+     ctx.fillText(esae, coordenadas.esae.x, coordenadas.esae.y);
+     ctx.fillText(ep, coordenadas.ep.x, coordenadas.ep.y);
+     ctx.fillText(lv, coordenadas.lv.x, coordenadas.lv.y);
+     ctx.fillText(lh, coordenadas.lh.x, coordenadas.lh.y);
+     ctx.fillText(Freno, coordenadas.Freno.x, coordenadas.Freno.y);
+     ctx.fillText(mosqueton, coordenadas.mosqueton.x, coordenadas.mosqueton.y);
+     ctx.fillText(otros, coordenadas.otros.x, coordenadas.otros.y);
+     ctx.fillText(porque, coordenadas.porque.x, coordenadas.porque.y);
+    
      
     
 
