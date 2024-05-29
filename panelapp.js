@@ -291,10 +291,10 @@ function guardarDatos() {
          otherss: { x: 690  , y:  1104  },
          totherss: { x: 725  , y: 1104 },
          obs: { x: 120  , y:  1142  },
-         fecha_exp: { x: 346  , y:  1190  },
-         valih: { x: 294  , y:  1210  },
-         Hri: { x: 760  , y:  1190  },
-         hrf: { x: 792  , y: 1209 },
+         fecha_exp: { x: 346  , y:  1195  },
+         valih: { x: 294  , y:  1212  },
+         Hri: { x: 760  , y:  1192  },
+         hrf: { x: 792  , y: 1210 },
 
          
       };
