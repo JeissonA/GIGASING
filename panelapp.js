@@ -377,3 +377,44 @@ function guardarDatos() {
       pdf.save('formulario_permiso.pdf');
   };
 }
+
+//Lista de chequeo//
+
+//Firma lista de chqueo//
+// script.js
+document.getElementById('signButton').addEventListener('click', function() {
+    document.getElementById('signatureSection').style.display = 'block';
+    this.style.display = 'none';
+});
+
+const canvas = document.getElementById('signaturePad');
+const signaturePad = new SignaturePad(canvas, {
+    backgroundColor: 'rgba(255, 255, 255, 0)',
+});
+
+document.getElementById('saveSignature').addEventListener('click', function() {
+    if (signaturePad.isEmpty()) {
+        alert('Por favor, realice una firma primero.');
+        return;
+    }
+
+    const dataURL = signaturePad.toDataURL();
+    
+    // Obtener la posición del contenedor del botón
+    const buttonContainer = document.getElementById('buttonContainer');
+    const rect = buttonContainer.getBoundingClientRect();
+
+    // Crear una nueva imagen y ponerla en la posición del contenedor del botón
+    const img = new Image();
+    img.src = dataURL;
+    img.style.position = 'absolute';
+    img.style.left = `${rect.left}px`;
+    img.style.top = `${rect.top}px`;
+
+    document.body.appendChild(img);
+    document.getElementById('signatureSection').style.display = 'none';
+});
+
+document.getElementById('clearSignature').addEventListener('click', function() {
+    signaturePad.clear();
+});
