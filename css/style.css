@@ -5,16 +5,11 @@
 }
 
 body{
-	display: grid;
-	justify-content: center;
-	align-items: center;
-
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
 
 .wave{
-	
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -31,7 +26,11 @@ body{
     padding: 0 2rem;
 }
 
-
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
 
 .login-content{
 	display: flex;
@@ -45,11 +44,7 @@ body{
 }
 
 form{
-	
-	justify-content: center;
-	align-items: center;
-
-	width: 400px;
+	width: 360px;
 }
 
 .login-content img{
@@ -220,7 +215,6 @@ a:hover{
 	}
 
 	.img img{
-	
 		width: 400px;
 	}
 }
@@ -264,25 +258,4 @@ a:hover{
     justify-content: flex-end;
     
     
-}
-
-.message, 
-.signin {
-
-  display: flex;
-  justify-content: space-between;
-  font-size: 14.5px;
-  color: rgb(0, 0, 0);
-}
-
-.signin {
-  text-align: center;
-}
-
-.signin a:hover {
-  text-decoration: underline rgb(0, 0, 0);
-}
-
-.signin a {
-  color: #ff0000;
 }
