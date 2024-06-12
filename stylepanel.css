@@ -85,7 +85,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 250px;
+    width: 300px;
     height: 100%;
     overflow: hidden;
     padding: 20px 15px;
@@ -258,6 +258,7 @@ body{
     width: 50px;
     min-width: 50px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .barra-lateral .usuario .info-usuario{
     width: 100%;
@@ -284,6 +285,197 @@ body{
     font-size: 20px;
 }
 
+/*opciones fotos de perfil*/
+
+.foto-perfil {
+    position: relative;
+    cursor: pointer;
+}
+
+.foto-perfil .options {
+
+    display: none;
+    position: absolute;
+    bottom: -40px; /* Colocar las opciones debajo de la foto */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.foto-perfil:hover .options {
+    display: block;
+}
+
+.foto-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.options a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 10px;
+}
+
+.options a:hover {
+    background-color: #f0f0f0;
+}
+
+/*cerrar sesion*/
+.Btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign{
+  width: 100%;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sign svg{
+  width: 17px;
+}
+.sign svg path{
+  fill: white;
+}
+/* text */
+.text{
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+   font-size: 1.2em;
+  font-weight: 600;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover{
+  width: 125px;
+  border-radius: 40px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+.Btn:hover .sign{
+  width: 30%;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  -webkit-transform: translate(2px ,2px);
+      -ms-transform: translate(2px ,2px);
+          transform: translate(2px ,2px);
+}
+/*boton enviar mensaje*/
+.boton-general {
+    text-align: center;
+    height: 5rem;
+    width: 16rem;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    padding: 0px;
+    margin: 1px;
+    cursor: pointer;
+  }
+  
+  .boton-decoration {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+  }
+  
+  .boton-contenido {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .boton_icono {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+  }
+  
+  .boton__texto {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+  
+  .boton-general:hover .boton__texto {
+    color: #fff;
+  }
+  
+  .boton-general:hover .boton-decoration {
+    transform: translate(0);
+  }
+
 
 /*-------------main*/
 
@@ -293,15 +485,54 @@ body{
 }
 
 main{
-    margin-left: 250px;
+    border: 2px solid red;
+    margin-left: 300px;
     padding: 20px;
     transition: margin-left 0.5s ease;
 }
 main.min-main{
+    border: 2px solid rgb(30, 255, 0);
     margin-left: 80px;
 }
+ /*opciones foto perfil*/
 
+ .options {
+    display: none;
+    position: absolute;
+    top: 110px; /* Adjust this value to position the options correctly */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    padding: 10px;
+    z-index: 1000;
+}
 
+.usuario:hover .options {
+    display: block;
+}
+
+.options a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.options a:hover {
+    background-color: #f0f0f0;
+}
+
+/*posicion boton cerrar sesion*/
+
+.logout-button {
+    
+    position: relative;
+    right: 6rem;
+    margin-top: 100px;
+    display: block;
+    
+}
 
 /*------------------> Responsive*/
 @media (max-height: 660px){
@@ -543,11 +774,13 @@ button {
 }
 
 .pie-pagina{
+    z-index: 1;
     color: #fff;
     background-color: black;
     position: fixed;
     left: 0;
     bottom: 0;
+    height: 1.8rem;
     width: 100%;
     text-align: center;
     padding: 10px 0; /* Espaciado interno */
@@ -747,57 +980,7 @@ button:hover {
       .limpiar{
         width: 100px;
       }
-      button {
-      font-family: inherit;
-      font-size: 20px;
-      background: #212121;
-      color: white;
-      fill: rgb(155, 153, 153);
-      padding: 0.7em 1em;
-      padding-left: 0.9em;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      border: none;
-      border-radius: 15px;
-      font-weight: 1000;
-    }
-    
-    button span {
-      display: block;
-      margin-left: 0.3em;
-      transition: all 0.3s ease-in-out;
-    }
-    
-    button svg {
-      display: block;
-      transform-origin: center center;
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    button:hover {
-      background: #000;
-    }
-    
-    button:hover .svg-wrapper {
-      transform: scale(1.25);
-      transition: 0.5s linear;
-    }
-    
-    button:hover svg {
-      transform: translateX(1.2em) scale(1.1);
-      fill: #fff;
-    }
-    
-    button:hover span {
-      opacity: 0;
-      transition: 0.5s linear;
-    }
-    
-    button:active {
-      transform: scale(0.95);
-    }
-    
+     
     #inputImagen{
         
         width: 100px;
@@ -817,6 +1000,156 @@ th {
 }
 .day-header {
     background-color: #d3d3d3;
+}
+/*MENSAJES VENTANA CHAT*/
+
+/* Estilos para la ventana de chat */
+.chat-window {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos para la cabecera de la ventana de chat */
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para la información del usuario */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+/* Estilos para los botones de control */
+.window-controls button {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.window-controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los mensajes */
+.chat-messages {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Estilos para los mensajes enviados */
+.sent-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.sent-message .message-bubble {
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    position: relative;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.sent-message .message-bubble::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #007bff;
+}
+
+/* Estilos para los mensajes recibidos */
+.received-message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.received-message .message-bubble {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    position: relative;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.received-message .message-bubble::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #f5f5f5;
+}
+
+/* Estilos para el input de mensaje */
+.message-input {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ccc;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.message-input button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
     /*DISPOSITIVOS MOVILES*/

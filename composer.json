@@ -1,0 +1,15 @@
+{
+    "name": "web/gigacon",
+    "description": "herramienta ultranet para llenar formularios en tiempo real",
+    "type": "project",
+    "license": "MTI",
+    "authors": [
+        {
+            "name": "Jeisson Bermudez"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "cboden/ratchet": "^0.4.4"
+    }
+}

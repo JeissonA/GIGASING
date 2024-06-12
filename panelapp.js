@@ -433,3 +433,106 @@ document.addEventListener("DOMContentLoaded", function () {
         signButton.style.display = "none";
     });
 });
+
+
+
+//funciones para actualizar foto de perfil//
+
+function toggleOptions() {
+    var options = document.getElementById('profileOptions');
+    if (options.style.display === 'block') {
+        options.style.display = 'none';
+    } else {
+        options.style.display = 'block';
+    }
+}
+
+//actualizar foto de perfil al clickear la foto de perfil :3//
+
+function toggleOptions() {
+    var options = document.getElementById("profileOptions");
+    var updateButton = document.getElementById("updatePhotoButton");
+    if (options.style.display === "none") {
+        options.style.display = "block";
+        updateButton.style.display = "none";
+    } else {
+        options.style.display = "none";
+        updateButton.style.display = "block";
+    }
+}
+
+function showUpdateForm() {
+    var updateForm = document.getElementById("updatePhotoForm");
+    updateForm.style.display = "block";
+}
+
+//VENTANA CHAT//
+
+document.addEventListener('DOMContentLoaded', function() {
+    var chatWindow = document.querySelector('.chat-window');
+    var minimizeButton = document.querySelector('.minimize-button');
+    var maximizeButton = document.querySelector('.maximize-button');
+    var closeButton = document.querySelector('.close-button');
+    var messageInput = document.querySelector('.message-input');
+    var chatMessages = document.querySelector('.chat-messages');
+    var sendButton = document.querySelector('.message-input button');
+    var messageField = document.querySelector('.message-input input');
+
+    var isMinimized = false;
+    var isMaximized = false;
+
+    minimizeButton.addEventListener('click', function() {
+        if (!isMinimized) {
+            chatMessages.style.display = 'none';
+            messageInput.style.display = 'none';
+            chatWindow.style.height = '40px';
+            isMinimized = true;
+        } else {
+            chatMessages.style.display = 'block';
+            messageInput.style.display = 'flex';
+            chatWindow.style.height = '400px';
+            isMinimized = false;
+        }
+    });
+
+    maximizeButton.addEventListener('click', function() {
+        if (!isMaximized) {
+            chatWindow.style.width = '100%';
+            chatWindow.style.height = '100%';
+            chatWindow.style.bottom = '0';
+            chatWindow.style.right = '0';
+            isMaximized = true;
+        } else {
+            chatWindow.style.width = '300px';
+            chatWindow.style.height = '400px';
+            chatWindow.style.bottom = '20px';
+            chatWindow.style.right = '20px';
+            isMaximized = false;
+        }
+    });
+
+    closeButton.addEventListener('click', function() {
+        chatWindow.style.display = 'none';
+    });
+
+    sendButton.addEventListener('click', function() {
+        var messageText = messageField.value;
+        if (messageText.trim() !== "") {
+            var messageElement = document.createElement('div');
+            messageElement.classList.add('sent-message');
+            var messageBubble = document.createElement('div');
+            messageBubble.classList.add('message-bubble');
+            messageBubble.textContent = messageText;
+            messageElement.appendChild(messageBubble);
+            chatMessages.appendChild(messageElement);
+            messageField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    messageField.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+});
