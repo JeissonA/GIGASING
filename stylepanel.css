@@ -1186,3 +1186,78 @@ th {
             padding: 5px;
         }
     }
+
+
+form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button, input[type="file"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button:hover, input[type="file"]:hover {
+            background-color: #0056b3;
+        }
+
+        #camera-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #video {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #snapshot {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+            background-color: #28a745;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            button, input[type="file"] {
+                width: 100%;
+                padding: 15px;
+            }
+        }
