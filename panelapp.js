@@ -536,3 +536,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+//camera//
+ const botonCamara = document.getElementById('boton-camara');
+        const cameraContainer = document.getElementById('camera-container');
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snapshotButton = document.getElementById('snapshot');
+        const fotoInput = document.getElementById('foto');
+        const fotoContainer = document.getElementById('foto-container');
+        const fotoPreview = document.getElementById('foto-preview');
+        const seleccionarFoto = document.getElementById('seleccionar-foto');
+        const reporteForm = document.getElementById('reporte-form');
+
+        botonCamara.addEventListener('click', async () => {
+            cameraContainer.style.display = 'block';
+            fotoContainer.style.display = 'none';
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error('Error al acceder a la cámara:', error);
+                alert('No se puede acceder a la cámara.');
+            }
+        });
+
+        snapshotButton.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataUrl = canvas.toDataURL('image/png');
+            fotoInput.value = dataUrl;
+            fotoPreview.src = dataUrl;
+            cameraContainer.style.display = 'none';
+            fotoContainer.style.display = 'block';
+        });
+
+        reporteForm.addEventListener('submit', (event) => {
+            if (seleccionarFoto.files.length === 0 && fotoInput.value === '') {
+                alert('Por favor, selecciona una foto o toma una foto con la cámara.');
+                event.preventDefault();
+            }
+        });
