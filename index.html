@@ -1516,8 +1516,31 @@ Firma
 
 
             <div class="section" id="section-4">
-                <h2>Historial</h2>
-                <p>Contenido de la sección Biblioteca.</p>
+                <h2>Foto</h2>
+              <h1>Subir Reporte Fotográfico</h1>
+    <form id="reporte-form" action="report-photo.php" method="post" enctype="multipart/form-data">
+        <label for="descripcion">Descripción (opcional):</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+        <br>
+        <label>Tomar foto:</label>
+        <button type="button" id="boton-camara">Abrir Cámara</button>
+        <div id="camera-container">
+            <video id="video" autoplay></video>
+            <button type="button" id="snapshot">Tomar Foto</button>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <input type="hidden" id="foto" name="foto">
+        </div>
+        <div id="foto-container" style="display: none;">
+            <h3>Foto tomada:</h3>
+            <img id="foto-preview" src="" alt="Foto">
+        </div>
+        <br>
+        <label>Seleccionar foto:</label>
+        <input type="file" id="seleccionar-foto" name="imagen" accept="image/*">
+        <br>
+        <button type="submit">Subir Reporte</button>
+    </form>
+
             </div>
             <div class="section" id="section-5">
                 <h2>Usuarios</h2>
